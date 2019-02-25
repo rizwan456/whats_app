@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whats_app/ui/CameraApp.dart';
+import 'package:whats_app/ui/calls.dart';
+import 'package:whats_app/ui/chat.dart.';
+import 'package:whats_app/ui/status.dart';
 
 class HomePage extends StatefulWidget {
   Home createState() => Home();
@@ -81,7 +84,7 @@ class Home extends State<HomePage> {
    // return CameraApp();
   }
 
-  Widget chat() {
+  /*Widget chat() {
     return Center(child: Text("Inside Chats"));
   }
 
@@ -91,5 +94,5 @@ class Home extends State<HomePage> {
 
   Widget calls() {
     return Center(child: Text("Inside Calls"));
-  }
+  }*/
 }
