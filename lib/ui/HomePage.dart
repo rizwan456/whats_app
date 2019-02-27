@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:whats_app/ui/CameraApp.dart';
-import 'package:whats_app/ui/calls.dart';
-import 'package:whats_app/ui/chat.dart.';
-import 'package:whats_app/ui/status.dart';
+import 'package:whats_app/ui/Calls.dart';
+import 'package:whats_app/ui/Chat.dart';
+import 'package:whats_app/ui/SavedContacts.dart';
+import 'package:whats_app/ui/Status.dart';
 
 class HomePage extends StatefulWidget {
   Home createState() => Home();
@@ -47,7 +47,7 @@ class Home extends State<HomePage> {
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.linear_scale),
+                  icon: Icon(Icons.more_vert),
                   onPressed: () {
                     //perform menu action
                     key.currentState.showSnackBar(SnackBar(
@@ -55,44 +55,28 @@ class Home extends State<HomePage> {
                       duration: Duration(seconds: 1),
                     ));
                   },
-                )
+                ),
               ],
             ),
-            body: TabBarView(
-                children: <Widget>[camera(), chat(), status(), calls()]),
-            floatingActionButton: Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: FloatingActionButton(
-                onPressed: () {
-                  //perform contacts action
-                  key.currentState.showSnackBar(SnackBar(
-                    content: new Text("Contacts Clicked"),
-                    duration: Duration(seconds: 1),
-                  ));
-                },
-                child: Icon(Icons.message),
-              ),
-            ),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.endDocked,
+            body: TabBarView(children: [camera(), chat(), status(), calls()]),
           )),
     );
   }
 
   Widget camera() {
     return Center(child: Text("Inside Camera"));
-   // return CameraApp();
+    // return CameraApp();
   }
 
-  /*Widget chat() {
-    return Center(child: Text("Inside Chats"));
+  Widget chat() {
+    return Chat();
   }
 
   Widget status() {
-    return Center(child: Text("Inside status"));
+    return Status();
   }
 
   Widget calls() {
-    return Center(child: Text("Inside Calls"));
-  }*/
+    return Calls();
+  }
 }
